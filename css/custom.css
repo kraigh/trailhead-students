@@ -3,13 +3,18 @@ body {
   background: url(../img/shattered.png) repeat;
 }
 
+h1, h2, h3 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
 .top-bits {
   padding: 40px 15px;
   text-align: center;
 }
 
 .main-logo {
-  width: 800px;
+  width: 600px;
 }
 
 .trailhead-logo {
@@ -42,4 +47,20 @@ body {
 .panel {
   background-color: #f8f8f8;
   padding: 20px;
+}
+
+.panel img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.img-map {
+  width: 100%;
+}
+
+.navbar-static-bottom {
+  margin-bottom: 0px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
