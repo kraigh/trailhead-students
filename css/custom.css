@@ -1,6 +1,6 @@
 body {
   padding-top: 50px;
-  background: url(../img/shattered.png) repeat;
+  background: url(../img/shattered.png) repeat fixed;
 }
 
 h1, h2, h3 {
@@ -8,9 +8,14 @@ h1, h2, h3 {
   margin-bottom: 20px;
 }
 
+a.list-group-item {
+  background-color: #f8f8f8;
+}
+
 .top-bits {
   padding: 40px 15px;
   text-align: center;
+  height: 377px;
 }
 
 .main-logo {
@@ -63,4 +68,15 @@ h1, h2, h3 {
   margin-bottom: 0px;
   padding-left: 60px;
   padding-right: 60px;
+}
+
+#modal-underlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
 }
