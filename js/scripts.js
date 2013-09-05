@@ -8,7 +8,7 @@
   $(document).on('click', '.focus', function(){
     var id = $(this).attr('data-target-id');
     // Check for the scroll class and set the variable accordingly.
-    if $(this).hasClass('scroll') {
+    if ($(this).hasClass('scroll')) {
       var scroll = true;
     } else {
       var scroll = false;
