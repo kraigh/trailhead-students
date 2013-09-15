@@ -25,14 +25,19 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=209846662524294";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar">what</span>
-            <span class="icon-bar">what</span>
-            <span class="icon-bar">what</span>
           </button>
           <a class="navbar-brand" href="http://trailheadonline.org"><img src="img/logo-only.png" class="trailhead-logo"></a>
         </div>
@@ -40,11 +45,14 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#" class="scroll">Home</a></li>
             <li><a href="javascript:;" class="scroll focus" data-target-id="about">About</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="meet-brian">Meet Brian</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="events">Events</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="connect">Connect</a></li>
             <li><a href="javascript:;" class="scroll focus" data-target-id="contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="icon-facebook icon-large"></i></a></li>
-            <li><a href="#"><i class="icon-twitter icon-large"></i></a></li>
+            <li><a href="https://www.facebook.com/TrailheadStudent"><i class="icon-facebook icon-large"></i></a></li>
+            <li><a href="https://twitter.com/THeadStudents"><i class="icon-twitter icon-large"></i></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,7 +61,7 @@
     <div class="container">
 
       <div class="top-bits">
-        <img src="img/students-logo-lg.png" class="main-logo">
+        <img src="img/Trailhead_Students_Logo.png" class="main-logo">
       </div>
 
     </div><!-- /.container -->
@@ -62,12 +70,12 @@
       <div class="row">
         <div class="col-md-6">
           <div class="panel">
-            <iframe width="100%" height="287" src="//www.youtube.com/embed/-aLYvZ5sX28?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+            <iframe src="//player.vimeo.com/video/74553669" width="100%" height="289" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
           </div> <!-- /.panel -->
         </div>
         <div class="col-md-6">
           <div class="panel">
-            <h1><i class="icon-calendar"></i> Launching 9/24</h1>
+            <h1><i class="icon-rocket"></i> Launching 9/24</h1>
             <img src="img/map-cropped-small-2.png" class="img-map">
             <p>Starting on September 24th, we will gather weekly on Tuesday nights from 7:00 pm to 8:30 pm and hangout, play, worship God through music, hear God’s Word taught, and gather in small groups to wrestle with what God is teaching us. We also connect outside of Tuesdays to go deeper–to share our lives together and walk together as we walk with Jesus.</p>
           </div> <!-- /.panel -->
@@ -81,59 +89,49 @@
             <p>We want to see students turn away from their rebellion against God, what the Bible calls “sin,” and turn towards him to receive forgiveness and new life in Jesus. And we want to see students live radically transformed lives for Jesus–becoming like him, and telling others about him.</p>
             <p>We meet on <strong>Tuesday nights</strong> from <strong>7:00 pm to 8:30 pm</strong> at Trailhead Church: <br><i class="icon-map-marker icon-4x pull-left" style="padding-top: 11px; padding-left: 10px;"></i><pre>101 W. Vandalia St. <br>Edwardsville, IL 62025 (<a href="https://maps.google.com/maps?ie=UTF8&cid=13221485590594205122&q=Trailhead+Church&gl=US&hl=en&t=h&ll=38.811306,-89.956527&spn=0.003344,0.00427&z=16&iwloc=A&source=embed"><i class="icon-map-marker icon-large" style="padding-right: 2px"></i>map</a>)</pre></p>
           </div> <!-- /.panel -->
-          <div class="panel">
+          <div class="panel" id="connect">
+            <h1><i class="icon-retweet"></i> Connect.</h1>
+            <div class="fb-like" data-href="https://www.facebook.com/TrailheadStudent" data-width="318" data-show-faces="true" data-send="true"></div>
+            <hr>
+            <a href="https://twitter.com/THeadStudents" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @THeadStudents</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div> <!-- /.panel -->
+        </div> <!-- /.col -->
+        <div class="col-md-4">
+          <div class="panel" id="meet-brian">
             <h1>Meet Brian.</h1>
-            <img src="http://placekitten.com/318/180">
-            <p>Lorem ipsum blardie blargh blah blee blah doo be doo dii doo dee daa.</p>
-            <p>Lorem ipsum blardie blargh blah blee blah doo be doo dii doo dee daa.</p>
-            <p>Lorem ipsum blardie blargh blah blee blah doo be doo dii doo dee daa.</p>
-            <p>Lorem ipsum blardie blargh blah blee blah doo be doo dii doo dee daa.</p>
+            <img src="img/brian.jpg" class="brian-img">
+            <p>Brian is a former high school History teacher. He spent five years in the education system before being hired as our full-time Student Ministry Director. He has a passion for seeing students turn outward in their lives, living for Jesus rather than themselves. He is helped by his wife Melinda. Melinda works as a social worker within a local junior high. Together, they desire to see students meet Jesus.</p>
           </div> <!-- /.panel -->
         </div> <!-- /.col -->
         <div class="col-md-4">
-          <div class="panel">
-            <h1>Featured Content.</h1>
-            <iframe width="100%" height="287" src="//www.youtube.com/embed/-aLYvZ5sX28?wmode=transparent" frameborder="0" allowfullscreen></iframe>
-            <p>Hey guys, check out this cool video.</p>
-          </div> <!-- /.panel -->
-          <div class="panel">
-            <h1>Featured Content</h1>
-            <img src="http://placekitten.com/318/180">
-            <p>Any sort of content will do. Perhaps a blog post, or an article.</p>
-          </div> <!-- /.panel -->
-        </div> <!-- /.col -->
-        <div class="col-md-4">
-          <div class="panel">
+          <div class="panel" id="events">
             <h1><i class="icon-bullhorn"></i> Events.</h1>
             <div class="list-group">
               <a href="javascript:;" class="list-group-item">
-                <h4 class="list-group-item-heading"><i class="icon-calendar"></i> Event - October 12th</h4>
-                <p class="list-group-item-text">Event details go here.</p>
+                <h4 class="list-group-item-heading"><i class="icon-calendar"></i> Launch - September 24th</h4>
+                <p class="list-group-item-text">Join us as we kick-off Trailhead students! We're meeting at 7:00pm.</p>
               </a>
               <a href="javascript:;" class="list-group-item">
-                <h4 class="list-group-item-heading"><i class="icon-calendar"></i> Event - November 14th</h4>
-                <p class="list-group-item-text">Event details go here.</p>
-              </a>
-              <a href="javascript:;" class="list-group-item">
-                <h4 class="list-group-item-heading"><i class="icon-calendar"></i> Event - December 18th</h4>
-                <p class="list-group-item-text">Event details go here.</p>
+                <h4 class="list-group-item-heading"><i class="icon-calendar"></i> Future Events</h4>
+                <p class="list-group-item-text">Check back here, we will be announcing some upcoming events very soon!</p>
               </a>
             </div>
           </div> <!-- /.panel -->
           <div class="panel" id="contact">
             <h1><i class="icon-envelope-alt"></i> Contact Us.</h1>
-            <form role="form">
+            <form role="form" method="post" action="email.php">
               <div class="form-group">
                 <label for="contact-name">Name</label>
-                <input type="text" class="form-control" id="contact-name" placeholder="Enter name">
+                <input name="contact-name" type="text" class="form-control" id="contact-name" placeholder="Enter name">
               </div>
               <div class="form-group">
                 <label for="contact-email">Email address</label>
-                <input type="email" class="form-control" id="contact-email" placeholder="Enter email">
+                <input name="contact-email" type="email" class="form-control" id="contact-email" placeholder="Enter email">
               </div>
               <div class="form-group">
                 <label for="contact-message">Message</label>
-                <textarea class="form-control" id="exampleInputPassword1" placeholder="Enter your message"></textarea>
+                <textarea name="contact-message" class="form-control" id="contact-message" placeholder="Enter your message"></textarea>
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
@@ -151,12 +149,15 @@
       <nav class="navbar navbar-default navbar-static-bottom" role="navigation">
         <!-- Collect the nav links, forms, and other content for toggling -->
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="scroll">Home</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="about">About</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="meet-brian">Meet Brian</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="events">Events</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="connect">Connect</a></li>
+            <li><a href="javascript:;" class="scroll focus" data-target-id="contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Login</a></li>
+            <!-- <li><a href="#">Login</a></li> -->
             <li><a href="http://kraigh.com">Site By KraigH</a></li>
           </ul>
       </nav>

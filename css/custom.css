@@ -4,22 +4,42 @@ body {
 }
 
 h1, h2, h3 {
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 20px;
 }
 
-a.list-group-item {
+i {
+  /*color: #20AEA2;*/
+  color: #1B449B;
+}
+
+a {
+  color: #20AEA2;
+}
+
+a::hover {
+  color: #B4A64B;
+}
+
+p::selection {
+  background: #B4A64B; /* Safari */
+  }
+p::-moz-selection {
+  background: #B4A64B; /* Firefox */
+}
+
+.list-group-item {
   background-color: #f8f8f8;
 }
 
 .top-bits {
-  padding: 40px 15px;
+  padding-top: 80px;
+  padding-bottom: 60px;
   text-align: center;
-  height: 377px;
 }
 
 .main-logo {
-  width: 600px;
+  width: 800px;
 }
 
 .trailhead-logo {
@@ -79,4 +99,12 @@ a.list-group-item {
   top: 0;
   left: 0;
   z-index: 998;
+}
+
+.brian-img {
+  width: 100%;
+}
+
+.twitter-button {
+  margin-left: 20px;
 }
