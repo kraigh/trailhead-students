@@ -13,9 +13,9 @@ if(isset($_POST['vars'])) {
     }
 
     // validation expected data exists
-    if(!isset($vars['contact-name']) ||
-        !isset($vars['contact-email']) ||
-        !isset($vars['contact-message'])) {
+    if(!isset($vars['name']) ||
+        !isset($vars['email']) ||
+        !isset($vars['message'])) {
         died('We are sorry, but one or more fields are missing. Please fill out all fields.');
     }
 
