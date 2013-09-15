@@ -3,7 +3,7 @@ if(isset($_POST['vars'])) {
   $vars = json_decode($_POST['vars'], TRUE);
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
-    $email_to = "kraigory@gmail.com";
+    $email_to = "info@trailheadonline.org, bpacheco@trailheadonline.org, kraigory@gmail.com";
     $email_subject = "Website Contact Form Message";
 
 
