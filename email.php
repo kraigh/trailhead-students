@@ -8,7 +8,13 @@ if(isset($_POST['vars'])) {
 
 
     function died($error) {
-        return $error;
+        $response = array(
+          'status' => '0',
+          'message' => $error
+          );
+
+        echo json_encode($response);
+
         die();
     }
 
@@ -56,7 +62,13 @@ $headers = 'From: '.$email_from."\r\n".
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
 
-return 'Thank you for contacting us. We will be in touch with you very soon.';
+$response = array(
+  'status' => '1',
+  'message' => 'success'
+  );
+
+echo json_encode($response);
+
 
 }
 ?>

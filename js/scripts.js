@@ -26,11 +26,11 @@
   $(document).on('click', '.contact-submit', function(){
     $('.error').hide();
     var name = $("#contact-name").val();
-    if (name == "") {
-      $("label#name-error").show();
-      $("input#contact-name").focus();
-      return false;
-    }
+    // if (name == "") {
+    //   $("label#name-error").show();
+    //   $("input#contact-name").focus();
+    //   return false;
+    // }
     var email = $("#contact-email").val();
     if (email == "" || !isEmail(email)) {
       $("label#email-error").show();
@@ -54,15 +54,20 @@
       dataType : 'json',
       url : 'email.php',
       data : 'vars='+vars,
-      success: function() {
-        alert('done');
-        $('#contact').html("<div id='message'></div>");
-        $('#message').html("<h2><i class='icon-check-sign'></i> Contact Form Submitted!</h2>")
-        .append("<p>We will be in touch soon.</p>")
-        .hide()
-        .fadeIn(1500, function() {
-          $('#message').append("<i class='icon-check-sign'></i>");
-        });
+      success: function(response) {
+        if (response.status == '1') {
+          $('#form-wrapper').html("<div id='message'></div>");
+          $('#message').html("<h2><i class='icon-ok'></i> Submitted!</h2>")
+          .append("<p>We will be in touch soon.</p>")
+          .hide()
+          .fadeIn(1500);
+        } else if (response.status == '0') {
+          $('#form-error').html("<div id='message'></div>");
+          $('#message').html("<h3><i class='icon-warning-sign' style='color: red'></i> Error!</h3>")
+          .append("<p>"+response.message+"</p>")
+          .hide()
+          .fadeIn(1500);
+        }
       }
     });
     return false;
