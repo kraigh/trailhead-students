@@ -55,7 +55,7 @@ if(isset($_POST['vars'])) {
 
     $email_message .= "Submitted On: ".$date."\n\n";
     $email_message .= "Name: ".clean_string($name)."\n";
-    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n\n";
     $email_message .= "Message: ".clean_string($message)."\n";
 
 
