@@ -26,11 +26,11 @@
   $(document).on('click', '.contact-submit', function(){
     $('.error').hide();
     var name = $("#contact-name").val();
-    // if (name == "") {
-    //   $("label#name-error").show();
-    //   $("input#contact-name").focus();
-    //   return false;
-    // }
+    if (name == "") {
+      $("label#name-error").show();
+      $("input#contact-name").focus();
+      return false;
+    }
     var email = $("#contact-email").val();
     if (email == "" || !isEmail(email)) {
       $("label#email-error").show();
