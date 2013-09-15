@@ -93,7 +93,7 @@
             <h1><i class="icon-retweet"></i> Connect.</h1>
             <div class="fb-like" data-href="https://www.facebook.com/TrailheadStudent" data-width="318" data-show-faces="true" data-send="true"></div>
             <hr>
-            <a href="https://twitter.com/THeadStudents" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @THeadStudents</a>
+            <a href="https://twitter.com/THeadStudents" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @THeadStudents</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
           </div> <!-- /.panel -->
         </div> <!-- /.col -->
@@ -120,20 +120,23 @@
           </div> <!-- /.panel -->
           <div class="panel" id="contact">
             <h1><i class="icon-envelope-alt"></i> Contact Us.</h1>
-            <form role="form" method="post" action="email.php">
+            <form role="form" action="">
               <div class="form-group">
                 <label for="contact-name">Name</label>
                 <input name="contact-name" type="text" class="form-control" id="contact-name" placeholder="Enter name">
+                <label class="error" for="contact-name" id="name-error">This field is required.</label>
               </div>
               <div class="form-group">
                 <label for="contact-email">Email address</label>
                 <input name="contact-email" type="email" class="form-control" id="contact-email" placeholder="Enter email">
+                <label class="error" for="contact-email" id="email-error">A valid email address is required.</label>
               </div>
               <div class="form-group">
                 <label for="contact-message">Message</label>
                 <textarea name="contact-message" class="form-control" id="contact-message" placeholder="Enter your message"></textarea>
+                <label class="error" for="contact-message" id="message-error">This field is required.</label>
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default contact-submit">Submit</button>
             </form>
           </div> <!-- /.panel -->
         </div> <!-- /.col -->

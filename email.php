@@ -1,5 +1,6 @@
 <?php
-if(isset($_POST['contact-email'])) {
+if(isset($_POST['vars'])) {
+  $vars = json_decode($_POST['vars'], TRUE);
 
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "kraigory@gmail.com";
@@ -7,20 +8,20 @@ if(isset($_POST['contact-email'])) {
 
 
     function died($error) {
-        echo $error;
+        return $error;
         die();
     }
 
     // validation expected data exists
-    if(!isset($_POST['contact-name']) ||
-        !isset($_POST['contact-email']) ||
-        !isset($_POST['contact-message'])) {
+    if(!isset($vars['contact-name']) ||
+        !isset($vars['contact-email']) ||
+        !isset($vars['contact-message'])) {
         died('We are sorry, but one or more fields are missing. Please fill out all fields.');
     }
 
-    $name = $_POST['contact-name']; // required
-    $email_from = $_POST['contact-email']; // required
-    $message = $_POST['contact-message']; // required
+    $name = $vars['name']; // required
+    $email_from = $vars['email']; // required
+    $message = $vars['message']; // required
 
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -54,12 +55,8 @@ $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
 @mail($email_to, $email_subject, $email_message, $headers);
-?>
 
-<!-- include your own success html here -->
+return 'Thank you for contacting us. We will be in touch with you very soon.';
 
-Thank you for contacting us. We will be in touch with you very soon.
-
-<?php
 }
 ?>

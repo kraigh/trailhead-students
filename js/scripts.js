@@ -1,5 +1,5 @@
 (function ($) {$(document).ready(function() {
-
+  $('.error').hide();
 
   // SET THE DEFAULT SCROLL OFFSET HERE
   var offsetDefault = 0;
@@ -22,6 +22,52 @@
     }
     focusOn(id, scroll, offset);
   });
+
+  $(document).on('click', '.contact-submit', function(){
+    $('.error').hide();
+    var name = $("#contact-name").val();
+    if (name == "") {
+      $("label#name-error").show();
+      $("input#contact-name").focus();
+      return false;
+    }
+    var email = $("#contact-email").val();
+    if (email == "" || !isEmail(email)) {
+      $("label#email-error").show();
+      $("input#contact-email").focus();
+      return false;
+    }
+    var message = $("#contact-message").val();
+    if (message == "") {
+      $("label#message-error").show();
+      $("input#contact-message").focus();
+      return false;
+    }
+    var data = {
+      name: name,
+      email: email,
+      message: message
+    };
+    var vars = JSON.stringify(data);
+    $.ajax({
+      type : 'POST',
+      dataType : 'json',
+      url : 'email.php',
+      data : 'vars='+vars,
+      success: function(response) {
+        alert(response);
+        $('#contact').html("<div id='message'></div>");
+        $('#message').html("<h2><i class='icon-check-sign'></i> Contact Form Submitted!</h2>")
+        .append("<p>We will be in touch soon.</p>")
+        .hide()
+        .fadeIn(1500, function() {
+          $('#message').append("<i class='icon-check-sign'></i>");
+        });
+      }
+    });
+    return false;
+  });
+
 });})(jQuery);
 
 function focusOn(id, scroll, offset) {
@@ -93,4 +139,9 @@ function closeBg(id) {
     '-moz-box-shadow': 'none',
     'box-shadow': 'none'
   });
+}
+
+function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
 }

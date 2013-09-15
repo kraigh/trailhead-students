@@ -28,6 +28,10 @@ p::-moz-selection {
   background: #B4A64B; /* Firefox */
 }
 
+.error {
+  color: red;
+}
+
 .list-group-item {
   background-color: #f8f8f8;
 }
