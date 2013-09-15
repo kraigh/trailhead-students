@@ -44,13 +44,16 @@ if(isset($_POST['vars'])) {
   if(strlen($error_message) > 0) {
     died($error_message);
   }
-    $email_message = "Form details below.\n\n";
+    $email_message = "Form details below. You may reply to this email, and it will be sent to the requestor.\n\n";
 
     function clean_string($string) {
       $bad = array("content-type","bcc:","to:","cc:","href");
       return str_replace($bad,"",$string);
     }
+    date_default_timezone_set('America/Chicago');
+    $date = date('l, F d \a\t h:i A');
 
+    $email_message .= "Submitted On: ".$date."\n\n";
     $email_message .= "Name: ".clean_string($name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
     $email_message .= "Message: ".clean_string($message)."\n";
