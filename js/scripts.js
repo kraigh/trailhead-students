@@ -54,8 +54,8 @@
       dataType : 'json',
       url : 'email.php',
       data : 'vars='+vars,
-      success: function(response) {
-        alert(response);
+      success: function() {
+        alert('done');
         $('#contact').html("<div id='message'></div>");
         $('#message').html("<h2><i class='icon-check-sign'></i> Contact Form Submitted!</h2>")
         .append("<p>We will be in touch soon.</p>")
