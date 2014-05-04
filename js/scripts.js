@@ -1,6 +1,15 @@
 (function ($) {$(document).ready(function() {
   $('.error').hide();
 
+  $.getJSON('http://trailheadonline.org:3000/events', function(data) {
+    console.log(data);
+    data.sort(order);
+    $.each(data, function(index, value){
+        console.log(value);
+        $(".list-group").append("<a href='javascript:;' class='list-group-item'><h4 class='list-group-item-heading'><i class='icon-calendar'></i> "+value.title+"</h4><p class='list-group-item-text'>"+value.description+"</p></a>");
+    });
+  });
+
   // SET THE DEFAULT SCROLL OFFSET HERE
   var offsetDefault = 0;
 
@@ -74,6 +83,14 @@
   });
 
 });})(jQuery);
+
+function order(a,b) {
+  if (a.order < b.order)
+    return -1;
+  if (a.order > b.order)
+    return 1;
+  return 0;
+}
 
 function focusOn(id, scroll, offset) {
   // Let's unbind the scroll function now, to account for nav clicks while a panel is in focus.
